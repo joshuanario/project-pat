@@ -35,25 +35,25 @@ def _gm(observed, fitted, stimuli, label):
     chi2pvalue = scipy.stats.chi2.sf(chi2testvar, degrees_of_freedom)
     output={}
     output = {
-        'label': label,
-        'n': n,
-        'independence_of_error': {
-            'mean(c)': np.mean(cmentries),
-            'std(c)': np.std(cmentries),
-            'student_t_1samp(c,target=0.0)': {
-                '(mean(a) - target)/se': tteststats,
-                'p': ttestp,
+        "label": label,
+        "n": n,
+        "independence_of_error": {
+            "mean(c)": np.mean(cmentries),
+            "std(c)": np.std(cmentries),
+            "student_t_1samp(c,target=0.0)": {
+                "(mean(a) - target)/se": tteststats,
+                "p": ttestp,
             },
         },
-        'homoscedasticity_of_error': {
-            'breusch_pagan': {
-                'chi_square_test_variable': chi2testvar,
-                'chi_square_p_value': chi2pvalue,
+        "homoscedasticity_of_error": {
+            "breusch_pagan": {
+                "chi_square_test_variable": chi2testvar,
+                "chi_square_p_value": chi2pvalue,
             }
         },
-        'expected_error': {
-            'mean(r)': np.mean(residuals),
-            'std(r)': np.std(residuals)
+        "expected_error": {
+            "mean(r)": np.mean(residuals),
+            "std(r)": np.std(residuals)
         }
     }
     return output

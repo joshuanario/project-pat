@@ -39,9 +39,9 @@ def _ll(observed, timestamps, hi_pass_filter, label):
     def rule_of_succession(s, n):
         return (s + 1.0)/(n + 2.0)
     return {
-        'label': label,
-        'depletion_state': {
-            'chance': rule_of_succession(most_probable[1], most_probable[1]),
-            'rate': most_probable[0],
+        "label": label,
+        "depletion_state": {
+            "chance": rule_of_succession(most_probable[1], most_probable[1]),
+            "rate": most_probable[0],
         },
     }
